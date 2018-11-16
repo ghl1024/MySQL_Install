@@ -5,12 +5,14 @@ mysql_install.sh
 2，安装前需要将脚本和安装介质传输到相同任意路径下，用root用户运行脚本，根据提示输入内容安装即可。
 
 3，脚本分为快速默认安装，自定义安装及取消安装三个选项。无论哪种选项，都会检查/etc/hosts中是否有本机IP与本机hostname，请务必添加。
-（1）快速默认安装，（软件安装在/mysql/mysoft,数据目录在/mysql/mydata)
-		注意：一定要检察脚本输出的内容，是否有相关的文件系统，如果没有，会在根下自动创建/mysql/mysoft,/mysql/mydata后再进行安装。
-（2）自定义安装，是根据用户需要安装到指定路径下。（自动创造用户指定的软件目录与数据目录）
-（3）退出脚本，取消安装。
+ （1）快速默认安装，（软件安装在/mysql/mysoft,数据目录在/mysql/mydata)
+      注意：一定要检察脚本输出的内容，是否有相关的文件系统，如果没有，会在根下自动创建/mysql/mysoft,/mysql/mydata后再进行安装。
+ （2）自定义安装，是根据用户需要安装到指定路径下。（自动创造用户指定的软件目录与数据目录）
+ （3）退出脚本，取消安装。
 
-1，快速默认安装过程如下：
+1、快速默认安装过程如下：
+---
+```
 [root@lvs2 mysql]# sh mysql_install.sh 
 check /etc/hosts IP hostname success!
                                          
@@ -66,9 +68,11 @@ Starting MySQL....                                         [  OK  ]
 ******* MySQL User: hxbmysqladmin ****   ---输出mysql管理员用户名（按照规范root用户修改为hxbmysqladmin）
 ******* User Password: hxbmysql ******   ---输入mysql管理员用户密码
 **************************************
+```
 
-
-2，自定义安装过程如下：
+2、自定义安装过程如下：
+---
+```
 check /etc/hosts IP hostname success!
                                          
 ##########################################
@@ -123,7 +127,7 @@ Starting MySQL....                                         [  OK  ]
 ******* MySQL User: root *******   ---输出mysql管理员用户名
 ***** User Password : root *****   ---输入mysql管理员用户密码
 **************************************
-
+```
 
 
 
