@@ -1,0 +1,149 @@
+input {
+
+    file {
+        path => "/var/log/nginx/access.log"
+        type => "nginx-access"
+        start_position => "beginning"
+        stat_interval => "2"
+        }
+
+    file {
+        path => "/var/log/nginx/error.log"
+        type => "nginx-error"
+        start_position => "beginning"
+        stat_interval => "2"
+        }
+		
+    file {
+        path => "/var/log/messages"
+        type => "system"
+        start_position => "beginning"
+        stat_interval => "2"
+        }
+
+    file {
+        path => "/var/log/secure"
+        type => "secure"
+        start_position => "beginning"
+        stat_interval => "2"
+        }
+
+    file {
+        path => "/server/application/apache-tomcat-8.0.27/logs/catalina.out"
+        type => "tomcat"
+        start_position => "beginning"
+        stat_interval => "2"
+        }
+
+    file {
+        path => "/var/log/mariadb/slow.log"
+        type => "mariadb"
+        start_position => "beginning"
+        stat_interval => "2"
+        }
+		
+    file {
+        path => "/var/log/boot.log"
+        type => "boot"
+        start_position => "beginning"
+        stat_interval => "2"
+        }
+
+    file {
+        path => "/var/log/yum.log"
+        type => "yum"
+        start_position => "beginning"
+        stat_interval => "2"
+        }		
+		
+    }
+
+output {
+    if [type] == "nginx-access" {
+        redis {
+            host => "10.0.0.112"
+            password => '123456'
+            port => "6379"
+            db => "1"
+            data_type => "list"
+            key => "nginx-access"
+        }
+    }
+
+    if [type] == "nginx-error" {
+        redis {
+            host => "10.0.0.112"
+            password => '123456'
+            port => "6379"
+            db => "1"
+            data_type => "list"
+            key => "nginx-error" 
+        }
+    }
+	
+    if [type] == "system" {
+        redis {
+            host => "10.0.0.112"
+            password => '123456'
+            port => "6379"
+            db => "1"
+            data_type => "list"
+            key => "system"
+        }
+    }
+	
+    if [type] == "secure" {
+        redis {
+            host => "10.0.0.112"
+            password => '123456'
+            port => "6379"
+            db => "1"
+            data_type => "list"
+            key => "secure"
+        }
+    }
+
+    if [type] == "tomcat" {
+        redis {
+            host => "10.0.0.112"
+            password => '123456'
+            port => "6379"
+            db => "1"
+            data_type => "list"
+            key => "tomcat"
+        }
+    }
+
+    if [type] == "mariadb" {
+        redis {
+            host => "10.0.0.112"
+            password => '123456'
+            port => "6379"
+            db => "1"
+            data_type => "list"
+            key => "mariadb"
+        }
+    }
+
+    if [type] == "boot" {
+        redis {
+            host => "10.0.0.112"
+            password => '123456'
+            port => "6379"
+            db => "1"
+            data_type => "list"
+            key => "boot"
+        }
+    }
+	
+    if [type] == "yum" {
+        redis {
+            host => "10.0.0.112"
+            password => '123456'
+            port => "6379"
+            db => "1"
+            data_type => "list"
+            key => "yum"
+        }
+    }
+}
