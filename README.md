@@ -17,7 +17,7 @@
 1、快速默认安装过程如下：
 ---
 ```
-
+git clone https://github.com/ghl1024/MySQL_Install.git
 [root@lvs2 mysql]# sh mysql_install.sh 
 check /etc/hosts IP hostname success!
                                          
