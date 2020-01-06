@@ -79,6 +79,9 @@ Starting MySQL....                                         [  OK  ]
 2、自定义安装过程如下：
 ---
 ```
+[root@lvs2 mysql]# git clone https://github.com/ghl1024/MySQL_Install.git
+[root@lvs2 mysql]# cd MySQL_Install
+[root@lvs2 mysql]# sh mysql_install.sh
 check /etc/hosts IP hostname success!
                                          
 ##########################################
