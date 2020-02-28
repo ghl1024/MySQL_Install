@@ -14,8 +14,8 @@
  
  （3）退出脚本，取消安装。
 
-:one: 快速默认安装过程如下：
----
+:one: #####快速默认安装过程如下：
+
 ```
 [root@lvs2 mysql]# git clone https://github.com/ghl1024/MySQL_Install.git
 [root@lvs2 mysql]# cd MySQL_Install
