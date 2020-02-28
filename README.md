@@ -14,8 +14,8 @@
  
  （3）退出脚本，取消安装。
 
-:one: #####快速默认安装过程如下：
-
+:small_blue_diamond: 1. 快速默认安装过程如下：
+--
 ```
 [root@lvs2 mysql]# git clone https://github.com/ghl1024/MySQL_Install.git
 [root@lvs2 mysql]# cd MySQL_Install
@@ -76,7 +76,7 @@ Starting MySQL....                                         [  OK  ]
 **************************************
 ```
 
-:two: 自定义安装过程如下：
+:small_blue_diamond: 2. 自定义安装过程如下：
 ---
 ```
 [root@lvs2 mysql]# git clone https://github.com/ghl1024/MySQL_Install.git
@@ -137,8 +137,3 @@ Starting MySQL....                                         [  OK  ]
 ***** User Password : root *****   ---输入mysql管理员用户密码
 **************************************
 ```
-
-
-
-
-
