@@ -14,7 +14,7 @@
  
  （3）退出脚本，取消安装。
 
-:keycap_one: 快速默认安装过程如下：
+:one: 快速默认安装过程如下：
 ---
 ```
 [root@lvs2 mysql]# git clone https://github.com/ghl1024/MySQL_Install.git
@@ -76,7 +76,7 @@ Starting MySQL....                                         [  OK  ]
 **************************************
 ```
 
-:keycap_two: 自定义安装过程如下：
+:two: 自定义安装过程如下：
 ---
 ```
 [root@lvs2 mysql]# git clone https://github.com/ghl1024/MySQL_Install.git
