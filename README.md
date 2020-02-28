@@ -1,4 +1,4 @@
-使用说明
+:white_check_mark: 使用说明
 ----
 1，此脚本为 `mysql5.7` 二进制方式自动安装脚本。请核对下载的安装介质是否正确。
 
@@ -14,7 +14,7 @@
  
  （3）退出脚本，取消安装。
 
-1、快速默认安装过程如下：
+:keycap_one: 快速默认安装过程如下：
 ---
 ```
 [root@lvs2 mysql]# git clone https://github.com/ghl1024/MySQL_Install.git
@@ -76,7 +76,7 @@ Starting MySQL....                                         [  OK  ]
 **************************************
 ```
 
-2、自定义安装过程如下：
+:keycap_two: 自定义安装过程如下：
 ---
 ```
 [root@lvs2 mysql]# git clone https://github.com/ghl1024/MySQL_Install.git
