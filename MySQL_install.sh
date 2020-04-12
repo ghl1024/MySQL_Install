@@ -239,7 +239,8 @@ done
 cd $azlj
 tar -xf mysql*5.7*tar* -C $base
 cd $base
-ln -s mysql*-x86_64 mysql5.7
+tar xf mysql-5.7*tar.gz
+ln -s mysql-5.7*-x86_64 mysql5.7
 chown -R mysql:mysql $base
 chown -R mysql:mysql $data
 chmod -R 755 $data
@@ -400,31 +401,31 @@ cat >>/etc/profile <<EOF
 export PATH=$base/mysql5.7/bin:\$PATH
 EOF
 source /etc/profile
-mysql --connect-expired-password -e "set password='hxbmysql';"
+mysql --connect-expired-password -e "set password='mysql';"
 sed -i '/user=/d' /etc/my.cnf
 sed -i '/password=/d' /etc/my.cnf
-mysql -uroot -phxbmysql -e "update mysql.user set User='hxbmysqladmin' where user='root' and host='localhost';">/dev/null 2>/dev/null
-mysql -uroot -phxbmysql -e "flush privileges;">/dev/null 2>/dev/null
-mysql -uhxbmysqladmin -phxbmysql -e "create user hxb@'%' identified by 'hxb';">/dev/null 2>/dev/null
-mysql -uhxbmysqladmin -phxbmysql -e "grant process,replication client on *.* to hxb@'%';">/dev/null 2>/dev/null
-mysql -uhxbmysqladmin -phxbmysql -e "grant select on sys.* to hxb@'%';">/dev/null 2>/dev/null
-mysql -uhxbmysqladmin -phxbmysql -e "grant select on performance_schema.* to hxb@'%';">/dev/null 2>/dev/null
-mysql -uhxbmysqladmin -phxbmysql -e "create user tivoli@'%' identified by 'tivoli';">/dev/null 2>/dev/null
-mysql -uhxbmysqladmin -phxbmysql -e "grant process,replication client on *.* to tivoli@'%';">/dev/null 2>/dev/null
-mysql -uhxbmysqladmin -phxbmysql -e "grant select on sys.* to tivoli@'%';">/dev/null 2>/dev/null
-mysql -uhxbmysqladmin -phxbmysql -e "grant select on performance_schema.* to tivoli@'%';">/dev/null 2>/dev/null
-mysql -uhxbmysqladmin -phxbmysql -e "create user sjwh@'%' identified by 'sjwh';">/dev/null 2>/dev/null
-mysql -uhxbmysqladmin -phxbmysql -e "grant SELECT, UPDATE, INSERT, DELETE, CREATE, DROP, RELOAD, PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES,CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE on *.* to sjwh@'%';">/dev/null 2>/dev/null
+mysql -uroot -pmysql -e "update mysql.user set User='mysqladmin' where user='root' and host='localhost';">/dev/null 2>/dev/null
+mysql -uroot -pmysql -e "flush privileges;">/dev/null 2>/dev/null
+mysql -umysqladmin -pmysql -e "create user @'%' identified by '';">/dev/null 2>/dev/null
+mysql -umysqladmin -pmysql -e "grant process,replication client on *.* to @'%';">/dev/null 2>/dev/null
+mysql -umysqladmin -pmysql -e "grant select on sys.* to @'%';">/dev/null 2>/dev/null
+mysql -umysqladmin -pmysql -e "grant select on performance_schema.* to @'%';">/dev/null 2>/dev/null
+mysql -umysqladmin -pmysql -e "create user tivoli@'%' identified by 'tivoli';">/dev/null 2>/dev/null
+mysql -umysqladmin -pmysql -e "grant process,replication client on *.* to tivoli@'%';">/dev/null 2>/dev/null
+mysql -umysqladmin -pmysql -e "grant select on sys.* to tivoli@'%';">/dev/null 2>/dev/null
+mysql -umysqladmin -pmysql -e "grant select on performance_schema.* to tivoli@'%';">/dev/null 2>/dev/null
+mysql -umysqladmin -pmysql -e "create user sjwh@'%' identified by 'sjwh';">/dev/null 2>/dev/null
+mysql -umysqladmin -pmysql -e "grant SELECT, UPDATE, INSERT, DELETE, CREATE, DROP, RELOAD, PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES,CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE on *.* to sjwh@'%';">/dev/null 2>/dev/null
 sed -i '$d' /etc/profile
 source /etc/profile
-sed -i "/\[client\]/a\user=hxb" /etc/my.cnf
-sed -i "/\user=/a\password=hxb" /etc/my.cnf
+sed -i "/\[client\]/a\user=" /etc/my.cnf
+sed -i "/\user=/a\password=" /etc/my.cnf
 suce=`ps -ef | grep mysqld|wc -l`
 if [ $suce -gt 2 ] ; then
 echo "*******`date`*******"
 echo "**********Install Sucessful!**********"
-echo "******* MySQL User: hxbmysqladmin ****"
-echo "******* User Password: hxbmysql ******"
+echo "******* MySQL User: mysqladmin ****"
+echo "******* User Password: mysql ******"
 echo "**************************************"
 else
 echo "*******`date`*******"
@@ -654,7 +655,8 @@ done
 cd $azlj
 tar -xf mysql*5.7*tar* -C $base
 cd $base
-ln -s mysql*-x86_64 mysql5.7
+tar xf mysql-5.7*-x86_64.tar.gz
+ln -s mysql-5.7*-x86_64 mysql5.7
 chown -R mysql:mysql $base
 chown -R mysql:mysql $data
 chmod -R 755 $data
