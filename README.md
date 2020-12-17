@@ -1,4 +1,11 @@
-# :mushroom: 使用说明
+![author](https://img.shields.io/badge/author-Hayden-blueviolet.svg)
+![license](https://img.shields.io/github/license/ghl1024/MySQL_Install.svg)
+![last commit](https://img.shields.io/github/last-commit/ghl1024/MySQL_Install.svg)
+![issues](https://img.shields.io/github/issues/ghl1024/MySQL_Install.svg)
+![stars](https://img.shields.io/github/stars/ghl1024/MySQL_Install.svg)
+![forks](https://img.shields.io/github/forks/ghl1024/MySQL_Install.svg)
+
+## :pushpin: 使用说明
 
 - 此脚本为二进制方式自动安装 `mysql5.7`，请核对下载的安装介质是否正确。
 
@@ -9,18 +16,18 @@
 - [部署文档参考](https://dev.mysql.com/doc/refman/5.7/en/binary-installation.html)
 - [ mysql5.7 安装包下载](https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.29-linux-glibc2.12-x86_64.tar)
 
-# :sun_with_face: 1. 默认安装过程如下：
+## :sun_with_face: 1. 默认安装过程如下：
 
 - 快速默认安装，（软件安装在 `/mysql/mysoft` 下，数据目录在 `/mysql/mydata` 下，端口为 `3306`，管理员用户为 `mysqladmin`，管理员密码为 `mysql`）；
 - 一定要检察脚本输出的内容，是否有相关的文件系统，如果没有，会在根下自动创建 `/mysql/mysoft` 和 `/mysql/mydata` 后才进行安装；
 
-##### 1.1 查看主机名
+### 1.1 查看主机名
 ```
 [root@aliyun ~]$ hostname
 aliyun
 ```
 
-##### 1.2 将 `ip` 和 `hostname` 加入到 `/etc/hosts` 中
+### 1.2 将 `ip` 和 `hostname` 加入到 `/etc/hosts` 中
 ```
 [root@aliyun ~]$ cat > /etc/hosts << EOF
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
@@ -29,7 +36,7 @@ aliyun
 EOF
 ```
 
-##### 1.3 查看 `/etc/hosts`
+### 1.3 查看 `/etc/hosts`
 ```
 [root@aliyun ~]$ cat /etc/hosts
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
@@ -37,7 +44,7 @@ EOF
 172.16.12.54  aliyun
 ```
 
-##### 1.4 开始安装
+### 1.4 开始安装
 ```
 [root@aliyun ~]$ pwd
 /root
@@ -112,7 +119,7 @@ Starting MySQL..                                           [  OK  ]
 [root@aliyun ~]$
 ```
 
-##### 1.5 安装完成查看
+### 1.5 安装完成查看
 ```
 [root@aliyun ~]$ netstat -tnlp|egrep "3306|mysql"
 tcp6       0      0 :::3306                 :::*                    LISTEN      3911/mysqld
@@ -157,18 +164,18 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 ```
 
 
-# :sun_with_face: 2. 自定义安装过程如下：
+## :sun_with_face: 2. 自定义安装过程如下：
 
 - 自定义安装，是根据用户需要安装到指定路径下，（自动创建用户指定的软件目录与数据目录）;
 - 如下示例（软件安装在 `/home/mysql/mysoft ` 下，数据目录在 `/home/mysql/mydata` 下，端口为 `3333`，管理员用户为 `root`，管理员密码为 `root`）；
 
-##### 2.1 查看主机名
+### 2.1 查看主机名
 ```
 [root@aliyun ~]$ hostname
 aliyun
 ```
 
-##### 2.2 将 `ip` 和 `hostname` 加入到 `/etc/hosts` 中
+### 2.2 将 `ip` 和 `hostname` 加入到 `/etc/hosts` 中
 ```
 [root@aliyun ~]$ cat > /etc/hosts << EOF
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
@@ -177,7 +184,7 @@ aliyun
 EOF
 ```
 
-##### 2.3 查看 `/etc/hosts`
+### 2.3 查看 `/etc/hosts`
 ```
 [root@aliyun ~]$ cat /etc/hosts
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
@@ -185,7 +192,7 @@ EOF
 172.16.12.54  aliyun
 ```
 
-##### 2.4 开始安装
+### 2.4 开始安装
 ```
 [root@aliyun ~]$ pwd
 /root
@@ -269,7 +276,7 @@ Starting MySQL..                                           [  OK  ]
 [root@aliyun ~]$
 ```
 
-##### 2.5 安装完成查看
+### 2.5 安装完成查看
 ```
 [root@aliyun ~]$ netstat -tnlp|egrep "3306|mysql"
 tcp6       0      0 :::3333                 :::*                    LISTEN      4158/mysqld
@@ -280,7 +287,7 @@ root      4294  0.0  0.0 112648   968 pts/0    R+   22:07   0:00 grep --color=au
 [root@aliyun ~]$
 ```
 
-# :sun_with_face: 3. 退出
+## :sun_with_face: 3. 退出
 
 ```
 [root@aliyun ~]$ sh MySQL_Install/MySQL_install.sh
