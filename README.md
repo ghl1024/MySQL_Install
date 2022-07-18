@@ -13,7 +13,7 @@
 
 - 脚本分为默认安装、自定义安装、取消安装三个选项；无论哪种选项，都会检查 `/etc/hosts` 中是否有本机 `IP` 与本机 `hostname`，请务必添加。
 
-- [部署文档参考](https://dev.mysql.com/doc/refman/5.7/en/binary-installation.html)
+- [官方部署文档参考](https://dev.mysql.com/doc/refman/5.7/en/binary-installation.html)
 
 - [ mysql5.7 安装包下载](https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.29-linux-glibc2.12-x86_64.tar)
 
