@@ -5,12 +5,6 @@
 ![stars](https://img.shields.io/github/stars/ghl1024/MySQL_Install.svg)
 ![forks](https://img.shields.io/github/forks/ghl1024/MySQL_Install.svg)
 
-# 目录
-
-- [自动安装](MySQL_install.sh)
-
-- [安装后检查](MySQL_check.sh)
-
 ## :pushpin: 使用说明
 
 - 此脚本为二进制方式自动安装 `mysql5.7`，系统为 `CentOS7.x` 都可，请核对下载的安装介质是否正确。
