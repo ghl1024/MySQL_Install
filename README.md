@@ -7,13 +7,13 @@
 
 ## :pushpin: 使用说明
 
-- 此脚本为二进制方式自动安装 `mysql5.7`，系统为 `CentOS7.x` 都可，请核对下载的安装介质是否正确。
+- 此脚本为二进制方式自动安装 `mysql5.7`，运行系统为 `CentOS7.x` 都可，请核对下载的安装介质是否正确。
 
 - 安装前需要将脚本和安装介质传输到相同任意路径下，用 `root` 用户运行此脚本，根据提示输入内容安装即可。
 
 - 脚本分为默认安装、自定义安装、取消安装三个选项；无论哪种选项，都会检查 `/etc/hosts` 中是否有本机 `IP` 与本机 `hostname`，请务必添加。
 
-- [部署文档参考](https://dev.mysql.com/doc/refman/5.7/en/binary-installation.html)
+- [官方部署文档参考](https://dev.mysql.com/doc/refman/5.7/en/binary-installation.html)
 
 - [ mysql5.7 安装包下载](https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.29-linux-glibc2.12-x86_64.tar)
 
@@ -175,7 +175,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 ## :sun_with_face: 2. 自定义安装过程如下
 
 - 自定义安装，是根据用户需要安装到指定路径下，（自动创建用户指定的软件目录与数据目录）;
-- 如下示例（软件安装在 `/home/mysql/mysoft ` 下，数据目录在 `/home/mysql/mydata` 下，端口为 `3333`，管理员用户为 `root`，管理员密码为 `root`）；
+- 如下示例（软件安装在 `/home/mysql/mysoft` 下，数据目录在 `/home/mysql/mydata` 下，端口为 `3333`，管理员用户为 `root`，管理员密码为 `root`）；
 
 ### 2.1 查看主机名
 
@@ -317,3 +317,5 @@ check /etc/hosts IP hostname success!
 Please Select [1-3] To Continue (Default 1):  3
 [root@aliyun ~]$
 ```
+
+获取徽标
