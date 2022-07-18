@@ -175,7 +175,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 ## :sun_with_face: 2. 自定义安装过程如下
 
 - 自定义安装，是根据用户需要安装到指定路径下，（自动创建用户指定的软件目录与数据目录）;
-- 如下示例（软件安装在 `/home/mysql/mysoft ` 下，数据目录在 `/home/mysql/mydata` 下，端口为 `3333`，管理员用户为 `root`，管理员密码为 `root`）；
+- 如下示例（软件安装在 `/home/mysql/mysoft` 下，数据目录在 `/home/mysql/mydata` 下，端口为 `3333`，管理员用户为 `root`，管理员密码为 `root`）；
 
 ### 2.1 查看主机名
 
@@ -317,3 +317,5 @@ check /etc/hosts IP hostname success!
 Please Select [1-3] To Continue (Default 1):  3
 [root@aliyun ~]$
 ```
+
+获取徽标
