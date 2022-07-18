@@ -317,5 +317,3 @@ check /etc/hosts IP hostname success!
 Please Select [1-3] To Continue (Default 1):  3
 [root@aliyun ~]$
 ```
-
-获取徽标
