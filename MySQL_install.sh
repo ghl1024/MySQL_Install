@@ -1,4 +1,9 @@
 #!/bin/bash
+####################
+### MySQL5.7版本 ####
+### CentOS7.x版本 ###
+####################
+
 #####Install Failed Delete MySQL#####
 #####rm -rf $base/*
 #####rm -rf $data/*
